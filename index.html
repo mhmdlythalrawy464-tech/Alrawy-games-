@@ -1,0 +1,1121 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>مكتب الراوي للألعاب الإلكترونية — كتالوج الألعاب (95 لعبة)</title>
+  <style>
+    :root {
+      --bg-main: #0b1120;
+      --bg-card: #111827;
+      --bg-surface: #1e293b;
+      --bg-input: #0f172a;
+      --text-main: #f8fafc;
+      --text-muted: #94a3b8;
+      --border: #334155;
+      --accent: #38bdf8;
+      --accent-dark: #0284c7;
+      --whatsapp: #16a34a;
+      --whatsapp-hover: #15803d;
+      --danger: #dc2626;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Noto Sans Arabic", Tahoma, sans-serif;
+      background-color: var(--bg-main);
+      color: var(--text-main);
+      line-height: 1.5;
+      padding-bottom: 105px;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 16px;
+    }
+
+    header {
+      background-color: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 16px;
+      margin-bottom: 16px;
+    }
+
+    .header-top {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      margin-bottom: 14px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .brand-badge {
+      width: 46px;
+      height: 46px;
+      border-radius: 12px;
+      background: linear-gradient(135deg, #0284c7, #38bdf8);
+      color: #08121e;
+      font-weight: 800;
+      font-size: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .brand h1 {
+      font-size: 19px;
+      font-weight: 800;
+      color: #ffffff;
+    }
+
+    .brand p {
+      font-size: 13px;
+      color: var(--text-muted);
+    }
+
+    .header-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    button, select, input {
+      font-family: inherit;
+      font-size: 14px;
+      color: var(--text-main);
+      border-radius: 10px;
+      border: 1px solid var(--border);
+      background-color: var(--bg-input);
+    }
+
+    button {
+      cursor: pointer;
+      padding: 9px 14px;
+      font-weight: 600;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      transition: background-color 0.15s ease, border-color 0.15s ease;
+    }
+
+    button:hover {
+      background-color: var(--bg-surface);
+    }
+
+    .btn-primary {
+      background-color: var(--accent-dark);
+      border-color: var(--accent);
+      color: #ffffff;
+    }
+
+    .btn-primary:hover {
+      background-color: #0369a1;
+    }
+
+    .btn-success {
+      background-color: var(--whatsapp);
+      border-color: #22c55e;
+      color: #ffffff;
+    }
+
+    .btn-success:hover {
+      background-color: var(--whatsapp-hover);
+    }
+
+    .btn-danger {
+      background-color: #7f1d1d;
+      border-color: var(--danger);
+      color: #fecaca;
+    }
+
+    .btn-danger:hover {
+      background-color: #991b1b;
+    }
+
+    .controls {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 10px;
+    }
+
+    @media (max-width: 640px) {
+      .controls {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    input[type="text"], input[type="tel"], select {
+      width: 100%;
+      padding: 10px 12px;
+      outline: none;
+    }
+
+    input:focus, select:focus {
+      border-color: var(--accent);
+    }
+
+    .catalog-bar {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      margin-bottom: 14px;
+    }
+
+    .catalog-title h2 {
+      font-size: 17px;
+      font-weight: 700;
+    }
+
+    .catalog-title span {
+      font-size: 13px;
+      color: var(--text-muted);
+    }
+
+    .count-pill {
+      background-color: var(--bg-surface);
+      border: 1px solid var(--border);
+      color: var(--accent);
+      font-weight: 700;
+      font-size: 13px;
+      padding: 5px 12px;
+      border-radius: 999px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(165px, 1fr));
+      gap: 14px;
+    }
+
+    @media (max-width: 480px) {
+      .grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+      }
+    }
+
+    .game-card {
+      background-color: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      cursor: pointer;
+      user-select: none;
+      transition: transform 0.12s ease, border-color 0.12s ease;
+    }
+
+    .game-card:hover {
+      border-color: var(--accent);
+      transform: translateY(-2px);
+    }
+
+    .game-card.selected {
+      border: 2px solid #22c55e;
+      background-color: #0f241a;
+    }
+
+    .poster-box {
+      position: relative;
+      width: 100%;
+      aspect-ratio: 3 / 4;
+      background: linear-gradient(160deg, #0f172a 0%, #1e293b 100%);
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .poster-box img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .poster-fallback {
+      width: 100%;
+      height: 100%;
+      padding: 14px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      gap: 6px;
+      background: linear-gradient(155deg, #0f172a 0%, #172554 55%, #1e293b 100%);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .poster-tag {
+      font-size: 10px;
+      font-weight: 800;
+      letter-spacing: 0.6px;
+      color: var(--accent);
+      background-color: rgba(15, 23, 42, 0.75);
+      border: 1px solid rgba(56, 189, 248, 0.35);
+      padding: 2px 8px;
+      border-radius: 999px;
+    }
+
+    .poster-ar {
+      font-size: 14px;
+      font-weight: 800;
+      color: #ffffff;
+      line-height: 1.35;
+    }
+
+    .poster-en {
+      font-size: 11px;
+      color: #cbd5e1;
+      direction: ltr;
+      line-height: 1.25;
+    }
+
+    .check-badge {
+      position: absolute;
+      top: 8px;
+      left: 8px;
+      width: 24px;
+      height: 24px;
+      border-radius: 7px;
+      background-color: rgba(15, 23, 42, 0.9);
+      border: 1.5px solid #cbd5e1;
+      color: #ffffff;
+      font-size: 14px;
+      font-weight: 800;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 2;
+    }
+
+    .game-card.selected .check-badge {
+      background-color: var(--whatsapp);
+      border-color: #86efac;
+    }
+
+    .game-info {
+      padding: 10px;
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+      flex: 1;
+    }
+
+    .game-ar {
+      font-size: 14px;
+      font-weight: 700;
+      color: #ffffff;
+    }
+
+    .game-en {
+      font-size: 12px;
+      color: var(--text-muted);
+      direction: ltr;
+      text-align: right;
+    }
+
+    .game-cat {
+      margin-top: auto;
+      padding-top: 6px;
+      font-size: 11px;
+      color: var(--accent);
+    }
+
+    .bottom-bar {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background-color: var(--bg-card);
+      border-top: 1px solid var(--border);
+      padding: 12px 16px;
+      z-index: 40;
+    }
+
+    .bottom-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+    }
+
+    .selection-summary strong {
+      display: block;
+      font-size: 15px;
+      color: #ffffff;
+    }
+
+    .selection-summary span {
+      font-size: 12px;
+      color: var(--text-muted);
+    }
+
+    .modal-backdrop {
+      position: fixed;
+      inset: 0;
+      background-color: rgba(2, 6, 23, 0.85);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 16px;
+      z-index: 60;
+      overflow-y: auto;
+    }
+
+    .modal-backdrop.open {
+      display: flex;
+    }
+
+    .modal {
+      width: 100%;
+      max-width: 780px;
+      max-height: 90vh;
+      overflow-y: auto;
+      background-color: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 18px;
+    }
+
+    .modal-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      padding-bottom: 12px;
+      border-bottom: 1px solid var(--border);
+      margin-bottom: 16px;
+    }
+
+    .panel {
+      background-color: var(--bg-surface);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 14px;
+      margin-bottom: 16px;
+    }
+
+    .panel h3 {
+      font-size: 15px;
+      margin-bottom: 8px;
+      color: #ffffff;
+    }
+
+    .active-wa-badge {
+      display: inline-block;
+      margin-bottom: 10px;
+      padding: 5px 10px;
+      border-radius: 8px;
+      background-color: #052e16;
+      border: 1px solid #16a34a;
+      color: #86efac;
+      font-size: 13px;
+      font-weight: 700;
+      direction: ltr;
+    }
+
+    .form-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 10px;
+    }
+
+    @media (max-width: 600px) {
+      .form-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .form-group label {
+      display: block;
+      font-size: 12px;
+      color: var(--text-muted);
+      margin-bottom: 4px;
+    }
+
+    .admin-list {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      max-height: 300px;
+      overflow-y: auto;
+    }
+
+    .admin-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+      background-color: var(--bg-input);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 8px 10px;
+      font-size: 13px;
+    }
+
+    .admin-row-actions {
+      display: flex;
+      gap: 6px;
+      flex-shrink: 0;
+    }
+
+    .status-toast {
+      margin-top: 8px;
+      font-size: 13px;
+      color: #86efac;
+      min-height: 20px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="header-top">
+        <div class="brand">
+          <div class="brand-badge">R</div>
+          <div>
+            <h1>مكتب الراوي للألعاب الإلكترونية</h1>
+            <p>كتالوج الألعاب الكامل • حدد الألعاب المطلوبة وأرسلها عبر واتساب</p>
+          </div>
+        </div>
+        <div class="header-actions">
+          <button type="button" id="openAdminBtn" class="btn-primary">⚙️ إدارة الألعاب</button>
+          <button type="button" id="resetCatalogBtn">↺ استعادة الـ 95 لعبة</button>
+        </div>
+      </div>
+
+      <div class="controls">
+        <input type="text" id="searchInput" placeholder="ابحث عن لعبة بالاسم الإنكليزي أو العربي..." />
+        <select id="categoryFilter">
+          <option value="ALL">كل الأقسام</option>
+          <option value="أكشن ومغامرات">أكشن ومغامرات</option>
+          <option value="رياضة وسباق">رياضة وسباق</option>
+          <option value="قتال وأنمي">قتال وأنمي</option>
+          <option value="تصويب وحرب">تصويب وحرب</option>
+          <option value="عائلي ومنوع">عائلي ومنوع</option>
+        </select>
+      </div>
+    </header>
+
+    <div class="catalog-bar">
+      <div class="catalog-title">
+        <h2>جميع الألعاب</h2>
+        <span>اضغط على البطاقة لاختيار الألعاب وإرسال طلبك</span>
+      </div>
+      <div class="count-pill" id="gameCountPill">95 لعبة</div>
+    </div>
+
+    <div class="grid" id="gamesGrid"></div>
+  </div>
+
+  <div class="bottom-bar">
+    <div class="bottom-inner">
+      <div class="selection-summary">
+        <strong id="selectedCountText">الألعاب المحددة: 0</strong>
+        <span id="selectedPreviewText">لم يتم تحديد أي لعبة بعد</span>
+      </div>
+      <button type="button" id="sendWhatsappBtn" class="btn-success">💬 إرسال عبر واتساب</button>
+    </div>
+  </div>
+
+  <div class="modal-backdrop" id="adminModal">
+    <div class="modal">
+      <div class="modal-header">
+        <div>
+          <h2>⚙️ إدارة الألعاب</h2>
+          <p style="font-size: 13px; color: var(--text-muted);">تعديل رقم الواتساب، إضافة أو تعديل أو حذف الألعاب، استعادة الـ 95 لعبة، وتصدير index.html المحدّث</p>
+        </div>
+        <button type="button" id="closeAdminBtn">✕ إغلاق</button>
+      </div>
+
+      <div class="panel">
+        <h3>📱 رقم واتساب استقبال الطلبات (مع رمز الدولة)</h3>
+        <p style="font-size: 12px; color: var(--text-muted); margin-bottom: 8px;">
+          اكتب الرقم بالصيغة الدولية بدون + أو مسافات (مثال: 9647800000000) ثم اضغط حفظ وتطبيق الرقم
+        </p>
+        <div class="active-wa-badge" id="activeWaBadge">الرقم النشط حالياً: +9647800000000</div>
+        <div class="form-grid" style="margin-bottom: 10px;">
+          <input type="tel" id="waNumberInput" placeholder="مثال: 9647800000000" />
+          <button type="button" id="saveWaBtn" class="btn-success">✓ حفظ وتطبيق الرقم</button>
+        </div>
+        <div style="display: flex; flex-wrap: wrap; gap: 8px;">
+          <button type="button" id="exportHtmlBtn" class="btn-primary">⬇ تصدير index.html المحدّث</button>
+          <button type="button" id="modalResetBtn">↺ استعادة الـ 95 لعبة</button>
+        </div>
+        <div class="status-toast" id="adminToast"></div>
+      </div>
+
+      <div class="panel">
+        <h3 id="gameFormTitle">+ إضافة لعبة جديدة</h3>
+        <form id="gameForm">
+          <input type="hidden" id="editGameId" />
+          <div class="form-grid">
+            <div class="form-group">
+              <label for="gameTitleEn">اسم اللعبة (إنكليزي) *</label>
+              <input type="text" id="gameTitleEn" placeholder="مثال: Little Nightmares III" required />
+            </div>
+            <div class="form-group">
+              <label for="gameTitleAr">اسم اللعبة (عربي) *</label>
+              <input type="text" id="gameTitleAr" placeholder="مثال: ليتل نايتميرز 3" required />
+            </div>
+            <div class="form-group">
+              <label for="gameCategory">القسم</label>
+              <select id="gameCategory">
+                <option value="أكشن ومغامرات">أكشن ومغامرات</option>
+                <option value="رياضة وسباق">رياضة وسباق</option>
+                <option value="قتال وأنمي">قتال وأنمي</option>
+                <option value="تصويب وحرب">تصويب وحرب</option>
+                <option value="عائلي ومنوع">عائلي ومنوع</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="gamePoster">رابط صورة الغلاف (اختياري)</label>
+              <input type="text" id="gamePoster" placeholder="https://..." />
+            </div>
+          </div>
+          <div style="margin-top: 12px; display: flex; gap: 8px;">
+            <button type="submit" class="btn-primary" id="submitGameBtn">حفظ اللعبة</button>
+            <button type="button" id="cancelEditBtn" style="display: none;">إلغاء التعديل</button>
+          </div>
+        </form>
+      </div>
+
+      <div class="panel">
+        <h3>قائمة الألعاب الحالية</h3>
+        <div class="admin-list" id="adminGameList"></div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const STORAGE_KEY = "alrawy_games_catalog_v23_95";
+    const SETTINGS_KEY = "alrawy_games_settings_v23_95";
+    const DEFAULT_WA_NUMBER = "9647800000000";
+
+    const INITIAL_GAMES = [
+      { id: 1, en: "Grand Theft Auto V", ar: "جراند ثفت أوتو 5", category: "أكشن ومغامرات", poster: "" },
+      { id: 2, en: "Red Dead Redemption 2", ar: "ريد ديد ريدمبشن 2", category: "أكشن ومغامرات", poster: "" },
+      { id: 3, en: "God of War Ragnarök", ar: "غود أوف وور راغناروك", category: "أكشن ومغامرات", poster: "" },
+      { id: 4, en: "God of War (2018)", ar: "غود أوف وور 2018", category: "أكشن ومغامرات", poster: "" },
+      { id: 5, en: "The Last of Us Part I", ar: "ذا لاست أوف أس الجزء الأول", category: "أكشن ومغامرات", poster: "" },
+      { id: 6, en: "The Last of Us Part II", ar: "ذا لاست أوف أس الجزء الثاني", category: "أكشن ومغامرات", poster: "" },
+      { id: 7, en: "Ghost of Tsushima Director's Cut", ar: "غوست أوف تسوشيما", category: "أكشن ومغامرات", poster: "" },
+      { id: 8, en: "Marvel's Spider-Man: Miles Morales", ar: "سبايدرمان مايلز موراليس", category: "أكشن ومغامرات", poster: "" },
+      { id: 9, en: "Marvel's Spider-Man Remastered", ar: "سبايدرمان ريماسترد", category: "أكشن ومغامرات", poster: "" },
+      { id: 10, en: "Horizon Forbidden West", ar: "هورايزن فوربيدن ويست", category: "أكشن ومغامرات", poster: "" },
+      { id: 11, en: "Horizon Zero Dawn", ar: "هورايزن زيرو داون", category: "أكشن ومغامرات", poster: "" },
+      { id: 12, en: "Elden Ring", ar: "إلدن رينغ", category: "أكشن ومغامرات", poster: "" },
+      { id: 13, en: "Sekiro: Shadows Die Twice", ar: "سيكيرو شادوز داي توايس", category: "أكشن ومغامرات", poster: "" },
+      { id: 14, en: "Bloodborne", ar: "بلادبورن", category: "أكشن ومغامرات", poster: "" },
+      { id: 15, en: "Cyberpunk 2077", ar: "سايبربانك 2077", category: "أكشن ومغامرات", poster: "" },
+      { id: 16, en: "The Witcher 3: Wild Hunt", ar: "ذا ويتشر 3", category: "أكشن ومغامرات", poster: "" },
+      { id: 17, en: "Days Gone", ar: "ديز غون", category: "أكشن ومغامرات", poster: "" },
+      { id: 18, en: "Death Stranding Director's Cut", ar: "ديث ستراندنغ", category: "أكشن ومغامرات", poster: "" },
+      { id: 19, en: "Resident Evil 4 Remake", ar: "ريزدنت إيفل 4 ريميك", category: "أكشن ومغامرات", poster: "" },
+      { id: 20, en: "Resident Evil Village", ar: "ريزدنت إيفل فيليج", category: "أكشن ومغامرات", poster: "" },
+      { id: 21, en: "Assassin's Creed Valhalla", ar: "أساسنز كريد فالهالا", category: "أكشن ومغامرات", poster: "" },
+      { id: 22, en: "Assassin's Creed Mirage", ar: "أساسنز كريد ميراج", category: "أكشن ومغامرات", poster: "" },
+      { id: 23, en: "Hogwarts Legacy", ar: "هوغوورتس ليغاسي", category: "أكشن ومغامرات", poster: "" },
+      { id: 24, en: "Stray", ar: "ستراي", category: "أكشن ومغامرات", poster: "" },
+      { id: 25, en: "A Way Out", ar: "أ واي أوت", category: "أكشن ومغامرات", poster: "" },
+      { id: 26, en: "It Takes Two", ar: "إت تيكس تو", category: "عائلي ومنوع", poster: "" },
+      { id: 27, en: "EA Sports FC 25", ar: "إي أيه سبورتس إف سي 25", category: "رياضة وسباق", poster: "" },
+      { id: 28, en: "EA Sports FC 24", ar: "إي أيه سبورتس إف سي 24", category: "رياضة وسباق", poster: "" },
+      { id: 29, en: "eFootball 2026", ar: "إي فوتبول 2026", category: "رياضة وسباق", poster: "" },
+      { id: 30, en: "eFootball PES 2021", ar: "بيس 2021", category: "رياضة وسباق", poster: "" },
+      { id: 31, en: "Gran Turismo 7", ar: "غران توريزمو 7", category: "رياضة وسباق", poster: "" },
+      { id: 32, en: "Gran Turismo Sport", ar: "غران توريزمو سبورت", category: "رياضة وسباق", poster: "" },
+      { id: 33, en: "Need for Speed Unbound", ar: "نيد فور سبيد أنباوند", category: "رياضة وسباق", poster: "" },
+      { id: 34, en: "Need for Speed Heat", ar: "نيد فور سبيد هيت", category: "رياضة وسباق", poster: "" },
+      { id: 35, en: "CarX Drift Racing Online", ar: "كار إكس دريفت راسينغ", category: "رياضة وسباق", poster: "" },
+      { id: 36, en: "Forza Horizon 5", ar: "فورزا هورايزن 5", category: "رياضة وسباق", poster: "" },
+      { id: 37, en: "Rocket League", ar: "روكيت ليغ", category: "رياضة وسباق", poster: "" },
+      { id: 38, en: "UFC 5", ar: "يو إف سي 5", category: "قتال وأنمي", poster: "" },
+      { id: 39, en: "WWE 2K24", ar: "دبليو دبليو إي 2 كي 24", category: "قتال وأنمي", poster: "" },
+      { id: 40, en: "Tekken 8", ar: "تيكن 8", category: "قتال وأنمي", poster: "" },
+      { id: 41, en: "Mortal Kombat 1", ar: "مورتال كومبات 1", category: "قتال وأنمي", poster: "" },
+      { id: 42, en: "Dragon Ball: Sparking! ZERO", ar: "دراغون بول سباركينغ زيرو", category: "قتال وأنمي", poster: "" },
+      { id: 43, en: "Demon Slayer: Kimetsu no Yaiba – The Hinokami Chronicles", ar: "ديمون سلاير هينوكامي كرونيكلز", category: "قتال وأنمي", poster: "" },
+      { id: 44, en: "Call of Duty: Modern Warfare III", ar: "كول أوف ديوتي مودرن وورفير 3", category: "تصويب وحرب", poster: "" },
+      { id: 45, en: "Call of Duty: Modern Warfare II", ar: "كول أوف ديوتي مودرن وورفير 2", category: "تصويب وحرب", poster: "" },
+      { id: 46, en: "Battlefield 2042", ar: "باتلفيلد 2042", category: "تصويب وحرب", poster: "" },
+      { id: 47, en: "Battlefield V", ar: "باتلفيلد 5", category: "تصويب وحرب", poster: "" },
+      { id: 48, en: "Tom Clancy's Rainbow Six Siege", ar: "رينبو سيكس سيج", category: "تصويب وحرب", poster: "" },
+      { id: 49, en: "Apex Legends", ar: "أبيكس ليجندز", category: "تصويب وحرب", poster: "" },
+      { id: 50, en: "Fortnite", ar: "فورتنايت", category: "تصويب وحرب", poster: "" },
+      { id: 51, en: "Sniper Elite 5", ar: "سنايبر إيليت 5", category: "تصويب وحرب", poster: "" },
+      { id: 52, en: "Doom Eternal", ar: "دوم إترنال", category: "تصويب وحرب", poster: "" },
+      { id: 53, en: "Ratchet & Clank: Rift Apart", ar: "راتشيت آند كلانك ريفت أبارت", category: "عائلي ومنوع", poster: "" },
+      { id: 54, en: "Crash Bandicoot 4: It's About Time", ar: "كراش بانديكوت 4", category: "عائلي ومنوع", poster: "" },
+      { id: 55, en: "Crash Team Racing Nitro-Fueled", ar: "كراش تيم ريسينغ نيترو فيولد", category: "رياضة وسباق", poster: "" },
+      { id: 56, en: "Sonic Frontiers", ar: "سونيك فرونتيرز", category: "عائلي ومنوع", poster: "" },
+      { id: 57, en: "Fall Guys", ar: "فول غايز", category: "عائلي ومنوع", poster: "" },
+      { id: 58, en: "Minecraft", ar: "ماين كرافت", category: "عائلي ومنوع", poster: "" },
+      { id: 59, en: "Terraria", ar: "تيراريا", category: "عائلي ومنوع", poster: "" },
+      { id: 60, en: "Subnautica", ar: "سابنوتيكا", category: "أكشن ومغامرات", poster: "" },
+      { id: 61, en: "Mafia: Definitive Edition", ar: "مافيا النسخة النهائية", category: "أكشن ومغامرات", poster: "" },
+      { id: 62, en: "Watch Dogs: Legion", ar: "واتش دوغز ليجن", category: "أكشن ومغامرات", poster: "" },
+      { id: 63, en: "Far Cry 6", ar: "فار كراي 6", category: "تصويب وحرب", poster: "" },
+      { id: 64, en: "Uncharted: Legacy of Thieves Collection", ar: "أنشارتد مجموعة اللصوص", category: "أكشن ومغامرات", poster: "" },
+      { id: 65, en: "Ghostrunner 2", ar: "غوست رانر 2", category: "أكشن ومغامرات", poster: "" },
+      { id: 66, en: "Sifu", ar: "سيفو", category: "قتال وأنمي", poster: "" },
+      { id: 67, en: "Tekken 7", ar: "تيكن 7", category: "قتال وأنمي", poster: "" },
+      { id: 68, en: "LEGO Ninjago Movie Videogame", ar: "ليغو نينجاجو موفي", category: "عائلي ومنوع", poster: "" },
+      { id: 69, en: "Call of Duty: Black Ops 6", ar: "كول أوف ديوتي: بلاك أوبس 6", category: "تصويب وحرب", poster: "" },
+      { id: 70, en: "Call of Duty: Black Ops III", ar: "كول أوف ديوتي: بلاك أوبس 3", category: "تصويب وحرب", poster: "" },
+      { id: 71, en: "Hajwala Drift", ar: "هجولة درفت", category: "رياضة وسباق", poster: "" },
+      { id: 72, en: "Call of Duty: Black Ops II", ar: "كول أوف ديوتي: بلاك أوبس 2", category: "تصويب وحرب", poster: "" },
+      { id: 73, en: "Call of Duty: Ghosts", ar: "كول أوف ديوتي: غوستس", category: "تصويب وحرب", poster: "" },
+      { id: 74, en: "Call of Duty: Black Ops", ar: "كول أوف ديوتي: بلاك أوبس", category: "تصويب وحرب", poster: "" },
+      { id: 75, en: "Battlefield 1", ar: "باتلفيلد 1", category: "تصويب وحرب", poster: "" },
+      { id: 76, en: "Battlefield 4", ar: "باتلفيلد 4", category: "تصويب وحرب", poster: "" },
+      { id: 77, en: "Teenage Mutant Ninja Turtles: Mutant Mayhem", ar: "سلاحف النينجا: فوضى المتحولين", category: "عائلي ومنوع", poster: "" },
+      { id: 78, en: "One Piece Odyssey", ar: "ون بيس أوديسي", category: "قتال وأنمي", poster: "" },
+      { id: 79, en: "SpongeBob SquarePants: Battle for Bikini Bottom – Rehydrated", ar: "سبونج بوب: معركة قاع الهامور ريهايدريتد", category: "عائلي ومنوع", poster: "" },
+      { id: 80, en: "Naruto Shippuden: Ultimate Ninja Storm 4", ar: "ناروتو شيبودن: ألتيميت نينجا ستورم 4", category: "قتال وأنمي", poster: "" },
+      { id: 81, en: "Naruto to Boruto: Shinobi Striker", ar: "ناروتو تو بوروتو: شينوبي سترايكر", category: "قتال وأنمي", poster: "" },
+      { id: 82, en: "Nickelodeon All-Star Brawl", ar: "نيكلوديون أول ستار برول", category: "عائلي ومنوع", poster: "" },
+      { id: 83, en: "LittleBigPlanet 2", ar: "ليتل بيغ بلانيت 2", category: "عائلي ومنوع", poster: "" },
+      { id: 84, en: "LittleBigPlanet", ar: "ليتل بيغ بلانيت", category: "عائلي ومنوع", poster: "" },
+      { id: 85, en: "Minecraft: Ultimate Collection", ar: "ماين كرافت: المجموعة الكاملة", category: "عائلي ومنوع", poster: "" },
+      { id: 86, en: "The Lego Movie 2 Videogame", ar: "فيلم ليغو 2: لعبة الفيديو", category: "عائلي ومنوع", poster: "" },
+      { id: 87, en: "Uncharted: The Lost Legacy", ar: "أنشارتد: الإرث الضائع", category: "أكشن ومغامرات", poster: "" },
+      { id: 88, en: "Resident Evil 2", ar: "ريزدنت إيفل 2", category: "أكشن ومغامرات", poster: "" },
+      { id: 89, en: "Pro Evolution Soccer 2018 (PES 2018)", ar: "بيس 2018", category: "رياضة وسباق", poster: "" },
+      { id: 90, en: "Jump Force", ar: "جامب فورس", category: "قتال وأنمي", poster: "" },
+      { id: 91, en: "Uncharted 4: A Thief's End", ar: "أنشارتد 4: نهاية اللص", category: "أكشن ومغامرات", poster: "" },
+      { id: 92, en: "EA Sports FC 27 Ultimate Edition", ar: "إي أيه سبورتس إف سي 27 ألتيميت", category: "رياضة وسباق", poster: "" },
+      { id: 93, en: "Call of Duty: Black Ops II (Classic)", ar: "كول أوف ديوتي: بلاك أوبس 2 كلاسيك", category: "تصويب وحرب", poster: "" },
+      { id: 94, en: "Detroit: Become Human", ar: "ديترويت: بيكم هيومن", category: "أكشن ومغامرات", poster: "" },
+      { id: 95, en: "Crash Bandicoot N. Sane Trilogy", ar: "كراش بانديكوت ثلاثية إن سين", category: "عائلي ومنوع", poster: "" }
+    ];
+
+    function cleanupLegacyKeys() {
+      try {
+        const toRemove = [];
+        for (let i = 0; i < localStorage.length; i++) {
+          const key = localStorage.key(i);
+          if (key && key.startsWith("alrawy_games_catalog_v") && key !== STORAGE_KEY) {
+            toRemove.push(key);
+          }
+        }
+        toRemove.forEach((k) => localStorage.removeItem(k));
+      } catch (_) {}
+    }
+
+    function loadGames() {
+      cleanupLegacyKeys();
+      try {
+        const raw = localStorage.getItem(STORAGE_KEY);
+        if (!raw) {
+          localStorage.setItem(STORAGE_KEY, JSON.stringify(INITIAL_GAMES));
+          return [...INITIAL_GAMES];
+        }
+        const parsed = JSON.parse(raw);
+        if (!Array.isArray(parsed) || parsed.length === 0) {
+          localStorage.setItem(STORAGE_KEY, JSON.stringify(INITIAL_GAMES));
+          return [...INITIAL_GAMES];
+        }
+        return parsed;
+      } catch (_) {
+        localStorage.setItem(STORAGE_KEY, JSON.stringify(INITIAL_GAMES));
+        return [...INITIAL_GAMES];
+      }
+    }
+
+    function sanitizePhone(val) {
+      return String(val || "").replace(/[^\d]/g, "");
+    }
+
+    function loadSettings() {
+      try {
+        const raw = localStorage.getItem(SETTINGS_KEY);
+        if (raw) {
+          const parsed = JSON.parse(raw);
+          const clean = sanitizePhone(parsed.waNumber);
+          if (clean.length >= 8) {
+            return { waNumber: clean };
+          }
+        }
+      } catch (_) {}
+      return { waNumber: DEFAULT_WA_NUMBER };
+    }
+
+    let games = loadGames();
+    let settings = loadSettings();
+    let selectedIds = new Set();
+
+    const gamesGrid = document.getElementById("gamesGrid");
+    const searchInput = document.getElementById("searchInput");
+    const categoryFilter = document.getElementById("categoryFilter");
+    const gameCountPill = document.getElementById("gameCountPill");
+    const selectedCountText = document.getElementById("selectedCountText");
+    const selectedPreviewText = document.getElementById("selectedPreviewText");
+    const sendWhatsappBtn = document.getElementById("sendWhatsappBtn");
+
+    const adminModal = document.getElementById("adminModal");
+    const openAdminBtn = document.getElementById("openAdminBtn");
+    const closeAdminBtn = document.getElementById("closeAdminBtn");
+    const waNumberInput = document.getElementById("waNumberInput");
+    const activeWaBadge = document.getElementById("activeWaBadge");
+    const saveWaBtn = document.getElementById("saveWaBtn");
+    const exportHtmlBtn = document.getElementById("exportHtmlBtn");
+    const resetCatalogBtn = document.getElementById("resetCatalogBtn");
+    const modalResetBtn = document.getElementById("modalResetBtn");
+    const adminToast = document.getElementById("adminToast");
+
+    const gameForm = document.getElementById("gameForm");
+    const gameFormTitle = document.getElementById("gameFormTitle");
+    const editGameId = document.getElementById("editGameId");
+    const gameTitleEn = document.getElementById("gameTitleEn");
+    const gameTitleAr = document.getElementById("gameTitleAr");
+    const gameCategory = document.getElementById("gameCategory");
+    const gamePoster = document.getElementById("gamePoster");
+    const submitGameBtn = document.getElementById("submitGameBtn");
+    const cancelEditBtn = document.getElementById("cancelEditBtn");
+    const adminGameList = document.getElementById("adminGameList");
+
+    function persistGames() {
+      try {
+        localStorage.setItem(STORAGE_KEY, JSON.stringify(games));
+      } catch (_) {}
+    }
+
+    function persistSettings() {
+      try {
+        localStorage.setItem(SETTINGS_KEY, JSON.stringify(settings));
+      } catch (_) {}
+    }
+
+    function showToast(msg) {
+      adminToast.textContent = msg;
+    }
+
+    function syncWaUi() {
+      activeWaBadge.textContent = "الرقم النشط حالياً: +" + settings.waNumber;
+      waNumberInput.value = settings.waNumber;
+    }
+
+    function getFilteredGames() {
+      const q = searchInput.value.trim().toLowerCase();
+      const cat = categoryFilter.value;
+      return games.filter((g) => {
+        const matchCat = cat === "ALL" || g.category === cat;
+        const matchQuery =
+          !q ||
+          String(g.en || "").toLowerCase().includes(q) ||
+          String(g.ar || "").toLowerCase().includes(q);
+        return matchCat && matchQuery;
+      });
+    }
+
+    function updateSelectionBar() {
+      const chosen = games.filter((g) => selectedIds.has(g.id));
+      selectedCountText.textContent = "الألعاب المحددة: " + chosen.length;
+      if (chosen.length === 0) {
+        selectedPreviewText.textContent = "لم يتم تحديد أي لعبة بعد";
+      } else {
+        selectedPreviewText.textContent = chosen.map((g) => g.ar || g.en).join("، ");
+      }
+    }
+
+    function buildPosterFallbackElement(game) {
+      const box = document.createElement("div");
+      box.className = "poster-fallback";
+
+      const tag = document.createElement("div");
+      tag.className = "poster-tag";
+      tag.textContent = "AL-RAWY GAMES";
+
+      const ar = document.createElement("div");
+      ar.className = "poster-ar";
+      ar.textContent = game.ar || game.en;
+
+      const en = document.createElement("div");
+      en.className = "poster-en";
+      en.textContent = game.en || "";
+
+      box.appendChild(tag);
+      box.appendChild(ar);
+      box.appendChild(en);
+      return box;
+    }
+
+    function renderGrid() {
+      const list = getFilteredGames();
+      gameCountPill.textContent = list.length + " لعبة";
+      const fragment = document.createDocumentFragment();
+
+      list.forEach((game) => {
+        const isSelected = selectedIds.has(game.id);
+        const card = document.createElement("div");
+        card.className = "game-card" + (isSelected ? " selected" : "");
+
+        const posterBox = document.createElement("div");
+        posterBox.className = "poster-box";
+
+        const check = document.createElement("div");
+        check.className = "check-badge";
+        check.textContent = isSelected ? "✓" : "";
+        posterBox.appendChild(check);
+
+        const cleanPoster = game.poster && String(game.poster).trim();
+        if (cleanPoster) {
+          const img = document.createElement("img");
+          img.src = cleanPoster;
+          img.alt = game.en || game.ar;
+          img.onerror = function () {
+            if (img.parentNode) {
+              img.parentNode.replaceChild(buildPosterFallbackElement(game), img);
+            }
+          };
+          posterBox.appendChild(img);
+        } else {
+          posterBox.appendChild(buildPosterFallbackElement(game));
+        }
+
+        const info = document.createElement("div");
+        info.className = "game-info";
+
+        const arTitle = document.createElement("div");
+        arTitle.className = "game-ar";
+        arTitle.textContent = game.ar;
+
+        const enTitle = document.createElement("div");
+        enTitle.className = "game-en";
+        enTitle.textContent = game.en;
+
+        const catLabel = document.createElement("div");
+        catLabel.className = "game-cat";
+        catLabel.textContent = game.category || "ألعاب";
+
+        info.appendChild(arTitle);
+        info.appendChild(enTitle);
+        info.appendChild(catLabel);
+
+        card.appendChild(posterBox);
+        card.appendChild(info);
+
+        card.addEventListener("click", () => {
+          if (selectedIds.has(game.id)) {
+            selectedIds.delete(game.id);
+          } else {
+            selectedIds.add(game.id);
+          }
+          renderGrid();
+          updateSelectionBar();
+        });
+
+        fragment.appendChild(card);
+      });
+
+      gamesGrid.innerHTML = "";
+      gamesGrid.appendChild(fragment);
+    }
+
+    function renderAdminList() {
+      adminGameList.innerHTML = "";
+      games.forEach((game, idx) => {
+        const row = document.createElement("div");
+        row.className = "admin-row";
+
+        const label = document.createElement("div");
+        label.textContent = `${idx + 1}. ${game.ar} — ${game.en}`;
+
+        const actions = document.createElement("div");
+        actions.className = "admin-row-actions";
+
+        const editBtn = document.createElement("button");
+        editBtn.type = "button";
+        editBtn.textContent = "تعديل";
+        editBtn.addEventListener("click", () => {
+          editGameId.value = String(game.id);
+          gameTitleEn.value = game.en;
+          gameTitleAr.value = game.ar;
+          gameCategory.value = game.category || "أكشن ومغامرات";
+          gamePoster.value = game.poster || "";
+          gameFormTitle.textContent = "✏️ تعديل لعبة";
+          submitGameBtn.textContent = "حفظ التعديل";
+          cancelEditBtn.style.display = "inline-flex";
+          gameTitleEn.focus();
+        });
+
+        const delBtn = document.createElement("button");
+        delBtn.type = "button";
+        delBtn.className = "btn-danger";
+        delBtn.textContent = "حذف";
+        delBtn.addEventListener("click", () => {
+          games = games.filter((item) => item.id !== game.id);
+          selectedIds.delete(game.id);
+          persistGames();
+          renderGrid();
+          renderAdminList();
+          updateSelectionBar();
+          showToast("تم حذف اللعبة بنجاح.");
+        });
+
+        actions.appendChild(editBtn);
+        actions.appendChild(delBtn);
+        row.appendChild(label);
+        row.appendChild(actions);
+        adminGameList.appendChild(row);
+      });
+    }
+
+    function resetGameForm() {
+      editGameId.value = "";
+      gameForm.reset();
+      gameFormTitle.textContent = "+ إضافة لعبة جديدة";
+      submitGameBtn.textContent = "حفظ اللعبة";
+      cancelEditBtn.style.display = "none";
+    }
+
+    function resetTo95Games() {
+      games = INITIAL_GAMES.map((g) => ({ ...g }));
+      selectedIds.clear();
+      persistGames();
+      renderGrid();
+      renderAdminList();
+      updateSelectionBar();
+      showToast("تمت استعادة جميع الـ 95 لعبة بنجاح.");
+    }
+
+    function buildExportedHtml() {
+      const serializedGames = JSON.stringify(games, null, 2).replace(/<\//g, "<\\/");
+      const serializedWa = JSON.stringify(settings.waNumber);
+      let sourceHtml = "<!DOCTYPE html>\n" + document.documentElement.outerHTML;
+      sourceHtml = sourceHtml.replace(
+        /const DEFAULT_WA_NUMBER = "[^"]*";/,
+        `const DEFAULT_WA_NUMBER = ${serializedWa};`
+      );
+      sourceHtml = sourceHtml.replace(
+        /const INITIAL_GAMES = \[[\s\S]*?\n    \];/,
+        `const INITIAL_GAMES = ${serializedGames};`
+      );
+      return sourceHtml;
+    }
+
+    saveWaBtn.addEventListener("click", () => {
+      const cleaned = sanitizePhone(waNumberInput.value);
+      if (cleaned.length < 8) {
+        showToast("يرجى إدخال رقم واتساب صحيح مع رمز الدولة (8 أرقام على الأقل).");
+        return;
+      }
+      settings.waNumber = cleaned;
+      persistSettings();
+      syncWaUi();
+      showToast("تم حفظ وتطبيق الرقم: +" + cleaned);
+    });
+
+    exportHtmlBtn.addEventListener("click", () => {
+      const cleaned = sanitizePhone(waNumberInput.value);
+      if (cleaned.length >= 8) {
+        settings.waNumber = cleaned;
+        persistSettings();
+        syncWaUi();
+      }
+      const htmlContent = buildExportedHtml();
+      const blob = new Blob([htmlContent], { type: "text/html;charset=utf-8" });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement("a");
+      a.href = url;
+      a.download = "index.html";
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+      setTimeout(() => URL.revokeObjectURL(url), 1500);
+      showToast("تم تصدير ملف index.html المحدّث بالرقم +" + settings.waNumber);
+    });
+
+    gameForm.addEventListener("submit", (e) => {
+      e.preventDefault();
+      const enVal = gameTitleEn.value.trim();
+      const arVal = gameTitleAr.value.trim();
+      if (!enVal || !arVal) return;
+
+      const catVal = gameCategory.value;
+      const posterVal = gamePoster.value.trim();
+
+      if (editGameId.value) {
+        const targetId = Number(editGameId.value);
+        games = games.map((g) =>
+          g.id === targetId ? { ...g, en: enVal, ar: arVal, category: catVal, poster: posterVal } : g
+        );
+        showToast("تم تحديث بيانات اللعبة.");
+      } else {
+        const nextId = games.reduce((max, g) => Math.max(max, Number(g.id) || 0), 0) + 1;
+        games.push({ id: nextId, en: enVal, ar: arVal, category: catVal, poster: posterVal });
+        showToast("تمت إضافة اللعبة الجديدة إلى الكتالوج.");
+      }
+
+      persistGames();
+      resetGameForm();
+      renderGrid();
+      renderAdminList();
+    });
+
+    cancelEditBtn.addEventListener("click", resetGameForm);
+
+    openAdminBtn.addEventListener("click", () => {
+      syncWaUi();
+      renderAdminList();
+      showToast("");
+      adminModal.classList.add("open");
+    });
+
+    closeAdminBtn.addEventListener("click", () => {
+      adminModal.classList.remove("open");
+    });
+
+    adminModal.addEventListener("click", (e) => {
+      if (e.target === adminModal) {
+        adminModal.classList.remove("open");
+      }
+    });
+
+    resetCatalogBtn.addEventListener("click", resetTo95Games);
+    modalResetBtn.addEventListener("click", resetTo95Games);
+    searchInput.addEventListener("input", renderGrid);
+    categoryFilter.addEventListener("change", renderGrid);
+
+    sendWhatsappBtn.addEventListener("click", () => {
+      const chosen = games.filter((g) => selectedIds.has(g.id));
+      if (chosen.length === 0) {
+        selectedPreviewText.textContent = "اختر لعبة واحدة على الأقل قبل الإرسال عبر واتساب";
+        return;
+      }
+      const lines = chosen.map((g, idx) => `${idx + 1}. ${g.ar} (${g.en})`);
+      const message = `مرحباً مكتب الراوي للألعاب الإلكترونية، أود طلب الألعاب التالية:\n${lines.join("\n")}`;
+      const waUrl = `https://wa.me/${settings.waNumber}?text=${encodeURIComponent(message)}`;
+      window.open(waUrl, "_blank", "noopener,noreferrer");
+    });
+
+    syncWaUi();
+    renderGrid();
+    updateSelectionBar();
+  </script>
+</body>
+</html>
